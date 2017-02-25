@@ -26,7 +26,7 @@ public class LPEClient extends AbstractClient{
         return null;
     }
 
-    public HttpResponse getShipmentPlanResposne(ShipmentPlanRequest shipmentPlanRequest) throws Exception {
+    public ShipmentPlanResponse getShipmentPlanResposne(ShipmentPlanRequest shipmentPlanRequest) throws Exception {
         HttpPut httpPut = new HttpPut(this.url+PLAN_URL);
         String payload = new ObjectMapper().writeValueAsString(shipmentPlanRequest);
         StringEntity data = new StringEntity(payload);
@@ -43,7 +43,6 @@ public class LPEClient extends AbstractClient{
         }
         is = response.getEntity().getContent();
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readValue(is, JsonNode.class);
-        return response;
+        return mapper.readValue(is, ShipmentPlanResponse.class);
     }
 }
