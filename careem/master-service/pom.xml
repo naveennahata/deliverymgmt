@@ -12,8 +12,9 @@
     <artifactId>master</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.</groupId>
-            <artifactId></artifactId>
+            <groupId>careem</groupId>
+            <artifactId>base</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

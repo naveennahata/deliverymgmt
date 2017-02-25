@@ -1,5 +1,6 @@
 package com.careem.hackathon.master.core;
 
+import com.careem.hackathon.base.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "facilities")
-public class Facility {
+public class Facility extends BaseEntity {
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -26,8 +27,8 @@ public class Facility {
     private String code;
 
     @Basic
-    @Column(name = "address")
-    private long address;
+    @Column(name = "address_id")
+    private long address_id;
 
     @Basic
     @Column(name = "type")
