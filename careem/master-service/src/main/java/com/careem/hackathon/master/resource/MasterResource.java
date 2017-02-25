@@ -23,6 +23,4 @@ public class MasterResource {
 //        return buildResponse(javax.ws.rs.core.Response.Status.OK, getMetricResponse,"Successfully fetched");
         return null;
     }
-
-    @POST
 }
