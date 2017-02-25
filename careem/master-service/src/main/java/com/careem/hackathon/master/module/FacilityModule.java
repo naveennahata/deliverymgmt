@@ -13,7 +13,6 @@ import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicHeader;
-import org.hibernate.SessionFactory;
 
 import java.util.ArrayList;
 import java.util.List;
