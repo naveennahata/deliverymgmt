@@ -2,10 +2,10 @@ server:
   rootPath: /api/*
   applicationConnectors:
   - type: http
-    port: 29010
+    port: 29020
   adminConnectors:
   - type: http
-    port: 29011
+    port: 29021
 
 logging:
   # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
@@ -31,11 +31,11 @@ masterDatabase:
   user: sql6160866
   password: ABSXIduUMI
   # the JDBC URL
-  url: jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6160866
+  url: jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6160866?useUnicode=true&characterEncoding=utf-8&useTimezone=true&amp;serverTimezone=Asia/Calcutta
 #  url: jdbc:mysql://localhost:3306/EMPLOYEE?useUnicode=true&characterEncoding=utf-8&useTimezone=true&amp;serverTimezone=Asia/Calcutta
 
   properties:
     hibernate.dialect: org.hibernate.dialect.MySQLDialect
     hibernate.show_sql: true
     hibernate.jdbc.batch_size: 50
-    hibernate.hbm2ddl.auto: create
+    #hibernate.hbm2ddl.auto: update
