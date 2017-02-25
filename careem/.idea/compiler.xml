@@ -6,11 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="careem" />
+        <module name="consignmentservice" />
+        <module name="master-service" />
+        <module name="orchestrator" />
+        <module name="planner" />
+        <module name="promise-engine" />
+        <module name="ui" />
+        <module name="user-service" />
+        <module name="vendor-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="careem" target="1.5" />
+      <module name="consignmentservice" target="1.5" />
+      <module name="master-service" target="1.5" />
+      <module name="orchestrator" target="1.5" />
+      <module name="planner" target="1.5" />
+      <module name="promise-engine" target="1.5" />
+      <module name="ui" target="1.5" />
+      <module name="user-service" target="1.5" />
+      <module name="vendor-service" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
