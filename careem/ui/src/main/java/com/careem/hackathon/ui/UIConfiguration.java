@@ -1,3 +1,5 @@
+package com.careem.hackathon.ui;
+
 import io.dropwizard.Configuration;
 
 /**

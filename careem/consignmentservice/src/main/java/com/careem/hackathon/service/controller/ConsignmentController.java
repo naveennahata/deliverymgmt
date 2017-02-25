@@ -19,7 +19,8 @@ public class ConsignmentController {
     }
 
     public ConsignmentResponse createConsignment(ConsignmentRequest consignmentRequest) {
-        Consignment consignment = lpeClient.getSlaAndCost(consignmentRequest);
-        consignmentService.createConsignment(consignment);
+        //Consignment consignment = lpeClient.getSlaAndCost(consignmentRequest);
+        //consignmentService.createConsignment(consignment);
+        return null;
     }
 }
