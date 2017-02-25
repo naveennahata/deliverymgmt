@@ -14,5 +14,6 @@ public class ConsignmentRequest {
     private Integer userId;
     private Integer startLocation;
     private Integer endLocation;
+    private String type;
     private List<String> shipmentIds;
 }
