@@ -2,6 +2,7 @@ package com.careem.hackathon.promise.engine;
 
 import com.careem.hackathon.promise.engine.db.PlanAccessor;
 import com.careem.hackathon.promise.engine.module.PromiseEngineModule;
+import com.careem.hackathon.promise.engine.resource.PromiseResource;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Stage;
 import com.hubspot.dropwizard.guice.GuiceBundle;
@@ -50,10 +51,12 @@ public class PromiseEngineApplication extends Application<PromiseEngineConfigura
     @Override
     public void initialize(Bootstrap<PromiseEngineConfiguration> bootstrap) {
         bootstrap.addBundle(masterBundle);
+        bootstrap.addBundle(guiceBundle);
     }
 
     @Override
     public void run(PromiseEngineConfiguration promiseEngineConfiguration, Environment environment) throws Exception {
+//        environment.jersey().register(new PromiseResource());
 
     }
 }

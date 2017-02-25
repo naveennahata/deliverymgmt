@@ -33,7 +33,7 @@ public class ConsignmentResource {
     @Path("/addConsignment")
     @UnitOfWork(value = "master")
     @Timed
-    public Response postEmpDailyAttendance(ConsignmentRequest consignmentRequest) throws Exception {
+    public Response postConsignment(ConsignmentRequest consignmentRequest) throws Exception {
         return javax.ws.rs.core.Response.status(Response.Status.OK).entity(consignmentController.createConsignment(consignmentRequest)).build();
     }
 }
