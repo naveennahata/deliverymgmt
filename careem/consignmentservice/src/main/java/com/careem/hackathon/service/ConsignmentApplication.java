@@ -1,10 +1,13 @@
 package com.careem.hackathon.service;
 
+import com.careem.hackathon.ConsignmentModule;
 import com.careem.hackathon.service.core.Consignment;
 import com.careem.hackathon.service.core.ConsignmentShipmentMapping;
 import com.careem.hackathon.service.core.ConsignmentTracking;
 import com.careem.hackathon.service.core.ConsignmentVendorMapping;
 import com.google.common.collect.ImmutableList;
+import com.google.inject.Stage;
+import com.hubspot.dropwizard.guice.GuiceBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -37,7 +40,7 @@ public class ConsignmentApplication extends Application<ConsignmentConfiguration
                 .build();
     }
 
-    private final HibernateBundle<ConsignmentConfiguration> masterBundle = new HibernateBundle<ConsignmentConfiguration>(
+    public static final HibernateBundle<ConsignmentConfiguration> masterBundle = new HibernateBundle<ConsignmentConfiguration>(
             entities, new SessionFactoryFactory()) {
         @Override
         protected String name() {
@@ -48,6 +51,12 @@ public class ConsignmentApplication extends Application<ConsignmentConfiguration
             return consignmentConfiguration.getMasterDatabase();
         }
     };
+
+    private static final GuiceBundle<ConsignmentConfiguration> guiceBundle =
+            GuiceBundle.<ConsignmentConfiguration>newBuilder().setConfigClass(ConsignmentConfiguration.class)
+                    .addModule(new ConsignmentModule())
+                    .enableAutoConfig(ConsignmentApplication.class.getPackage().getName())
+                    .build(Stage.DEVELOPMENT);
 
     @Override
     public void initialize(Bootstrap<ConsignmentConfiguration> bootstrap) {

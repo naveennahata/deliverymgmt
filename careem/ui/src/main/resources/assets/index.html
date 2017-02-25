@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Hackathon</title>
+</head>
+<body>
+<div class="container" style="width: 65%">
+    <ul class="nav nav-pills nav-justified">
+        <li class="active"><a data-toggle="tab" href="#register">Register User</a></li>
+        <li><a data-toggle="tab" href="#estimate">Get Estimate</a></li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div id="register" class="container tab-pane fade in active">
+        <div class="panel panel-primary">
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="firstname" class="col-md-2">First Name:</label>
+                <input type="text" id="firstname" class="col-md-8">
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="lastname" class="col-md-2">Last Name:</label>
+                <input type="text" id="lastname" class="col-md-8">
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="email" class="col-md-2">Email:</label>
+                <input type="email" id="email" class="col-md-8">
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="contact" class="col-md-2">Contact:</label>
+                <input type="number" id="contact" class="col-md-8">
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%>
+                <label for="contact" class="col-md-2">Select Type:</label>
+                <select id="type" class="col-md-8">
+                    <option>Vendor</option>
+                    <option>Customer</option>
+                </select>
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%; margin-bottom: 2%; text-align: center">
+                <button class="btn btn-primary" onclick="register()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="estimate" class="container tab-pane fade">
+        <div class="panel panel-primary">
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="user" class="col-md-2">User Id:</label>
+                <input type="number" id="user" class="col-md-3">
+                <label for="startpincode" class="col-md-2">Start Pincode:</label>
+                <input type="number" id="startpincode" class="col-md-3">
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%">
+                <label for="endpincode" class="col-md-2">End Pincode:</label>
+                <input type="number" id="endpincode" class="col-md-3">
+                <label for="contact" class="col-md-2">Consignment Type:</label>
+                <select id="ctype" class="col-md-3">
+                    <option>Large</option>
+                    <option>Medium</option>
+                    <option>Small</option>
+                </select>
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%; text-align: center">
+                <button class="btn btn-primary" onclick="getData()">Submit</button>
+            </div>
+            <div class="row" style="margin-top: 3%; margin-left: 2%; width: 90%" id="result" hidden>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Promise Date</td>
+                        <td>28/12/17</td>
+                    </tr>
+                    <tr>
+                        <td>Cost(Rs)</td>
+                        <td>100</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
