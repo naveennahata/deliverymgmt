@@ -28,11 +28,10 @@ masterDatabase:
   # the name of your JDBC driver
   driverClass: com.mysql.jdbc.Driver
   # the username
-  user: sql6160866
-  password: ABSXIduUMI
+  user: root
+  password: root
   # the JDBC URL
-  url: jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6160866
-#  url: jdbc:mysql://localhost:3306/EMPLOYEE?useUnicode=true&characterEncoding=utf-8&useTimezone=true&amp;serverTimezone=Asia/Calcutta
+  url: jdbc:mysql://localhost:3306/CONSIGNMENT
 
   properties:
     hibernate.dialect: org.hibernate.dialect.MySQLDialect

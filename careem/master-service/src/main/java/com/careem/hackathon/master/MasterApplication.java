@@ -9,6 +9,7 @@ import io.dropwizard.hibernate.HibernateBundle;
 import io.dropwizard.hibernate.SessionFactoryFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.hibernate.SessionFactory;
 
 /**
  * Created by naveen.nahata on 25/02/17.
@@ -27,7 +28,7 @@ public class MasterApplication extends Application<MasterConfiguration> {
                 .build();
     }
 
-    private final HibernateBundle<MasterConfiguration> masterBundle = new HibernateBundle<MasterConfiguration>(
+    public static final HibernateBundle<MasterConfiguration> masterBundle = new HibernateBundle<MasterConfiguration>(
             entities, new SessionFactoryFactory()) {
         @Override
         protected String name() {

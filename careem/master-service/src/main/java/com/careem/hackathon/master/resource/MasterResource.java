@@ -1,6 +1,9 @@
 package com.careem.hackathon.master.resource;
 
+import com.careem.hackathon.master.controller.FacilityController;
+import com.careem.hackathon.master.core.Facility;
 import com.codahale.metrics.annotation.Timed;
+import com.google.inject.Inject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -16,13 +19,19 @@ import javax.ws.rs.core.Response;
                 + ";charset=utf-8")
 public class MasterResource {
 
+    FacilityController facilityController;
+
+    @Inject
+    public MasterResource(FacilityController facilityController){
+        this.facilityController = facilityController;
+    }
+
     @GET
     @Path("/facility/{id}")
     @Timed
     public Response getFacilities(@PathParam("id") long id) throws Exception {
-//        return buildResponse(javax.ws.rs.core.Response.Status.OK, getMetricResponse,"Successfully fetched");
-        return null;
-    }
+        Facility facility = facilityController.getfacilityById(id);
+        return javax.ws.rs.core.Response.status(Response.Status.OK).entity(facility).build();
 
-    @POST
+    }
 }
