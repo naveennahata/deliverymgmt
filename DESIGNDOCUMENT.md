@@ -21,6 +21,7 @@ Shipment Mgmt System will own all shipment related information. Shipment History
 ![alt tag](https://github.com/naveennahata/deliverymgmt/blob/master/images/ConsignmentService.png) <br />
 Logistics Promising Engine : <br />
 Logistics promising engine will take input from Planner, hold data in RadisCache with near real time update from planner, and provide plan with cost to shipmentMgmt while initially creating shipment. <br />
+![alt tag](https://github.com/naveennahata/deliverymgmt/blob/master/images/LPE.png) <br />
 Planner : <br />
 Planner is core engine to plan shipment deliveries. It take input from VendorMgmtSystem, and ShipmentMgmt to execute shipment deliveries. <br />
 ![alt tag](https://github.com/naveennahata/deliverymgmt/blob/master/images/Planner.png) <br />
