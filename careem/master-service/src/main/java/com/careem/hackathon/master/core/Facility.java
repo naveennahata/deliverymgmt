@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "facilities")
-public class Facility extends BaseEntity{
+public class Facility extends BaseEntity {
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -27,8 +27,8 @@ public class Facility extends BaseEntity{
     private String code;
 
     @Basic
-    @Column(name = "address")
-    private long address;
+    @Column(name = "address_id")
+    private long address_id;
 
     @Basic
     @Column(name = "type")
