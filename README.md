@@ -6,17 +6,17 @@ Careem's vision is to become the biggest mover of people and goods across MENA. 
 #High Level Architecture Diagram <br />
 ![alt tag](https://github.com/naveennahata/deliverymgmt/blob/master/architecture.png)
 <br />
-E2E Orchestrator : <br />
+<b>E2E Orchestrator :</b> <br />
 E2E Orchestrator take request from client (Client can be customer or vendor) and take care of entire End to End workflow.
-MDM (Master Data Management System) : <br />
+<b>MDM (Master Data Management System) :</b> <br />
 This service will own MasterDate e.g. (Hub Related information etc) <br />
-User Service : <br />
+<b>User Service : </b><br />
 User Service will hold customer/vendor related static information. <br />
-Shipment Mgmt System : <br />
+<b>Shipment Mgmt System : </b><br />
 Shipment Mgmt System will own all shipment related information. Shipment History, Details. <br />
-Logistics Promising Engine : <br />
+<b>Logistics Promising Engine : </b><br />
 Logistics promising engine will take input from Planner, hold data in RadisCache with near real time update from planner, and provide plan with cost to shipmentMgmt while initially creating shipment. <br />
-Planner : <br />
+<b>Planner : </b><br />
 Planner is core engine to plan shipment deliveries. It take input from VendorMgmtSystem, and ShipmentMgmt to execute shipment deliveries. <br />
 
 
