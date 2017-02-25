@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="base" />
+        <module name="consignment-service" />
         <module name="consignmentservice" />
+        <module name="master" />
         <module name="master-service" />
         <module name="orchestrator" />
         <module name="planner" />
@@ -20,7 +22,9 @@
     <bytecodeTargetLevel>
       <module name="base" target="1.5" />
       <module name="careem" target="1.5" />
+      <module name="consignment-service" target="1.5" />
       <module name="consignmentservice" target="1.5" />
+      <module name="master" target="1.5" />
       <module name="master-service" target="1.5" />
       <module name="orchestrator" target="1.5" />
       <module name="planner" target="1.5" />
