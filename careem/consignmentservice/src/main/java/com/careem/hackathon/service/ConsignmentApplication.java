@@ -60,7 +60,9 @@ public class ConsignmentApplication extends Application<ConsignmentConfiguration
 
     @Override
     public void initialize(Bootstrap<ConsignmentConfiguration> bootstrap) {
+
         bootstrap.addBundle(masterBundle);
+        bootstrap.addBundle(guiceBundle);
     }
 
     @Override
