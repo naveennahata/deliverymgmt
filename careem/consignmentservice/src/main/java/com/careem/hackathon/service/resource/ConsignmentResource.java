@@ -30,7 +30,7 @@ public class ConsignmentResource {
     }
 
     @POST
-    @Path("/postEmpDailyAttendance")
+    @Path("/addConsignment")
     @UnitOfWork(value = "master")
     @Timed
     public Response postEmpDailyAttendance(ConsignmentRequest consignmentRequest) throws Exception {
