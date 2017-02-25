@@ -17,6 +17,7 @@
         <module>planner</module>
         <module>orchestrator</module>
         <module>ui</module>
+        <module>base</module>
     </modules>
 
     <dependencies>
