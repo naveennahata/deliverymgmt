@@ -1,6 +1,8 @@
 package com.careem.hackathon.master.module;
 
 import com.careem.hackathon.master.MasterApplication;
+import com.careem.hackathon.master.dao.FacilityDao;
+import com.careem.hackathon.master.dao.FacilityRepository;
 import com.careem.hackathon.master.service.FacilityService;
 import com.careem.hackathon.master.service.FacilityServiceImpl;
 import com.google.inject.AbstractModule;
@@ -24,6 +26,7 @@ public class FacilityModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(FacilityService.class).to(FacilityServiceImpl.class);
+        bind(FacilityRepository.class).to(FacilityDao.class);
     }
 
     @Provides
@@ -40,5 +43,6 @@ public class FacilityModule extends AbstractModule {
         defaultHeaders.add(new BasicHeader("Content-Type", "application/json"));
         return HttpClientBuilder.create().setDefaultHeaders(defaultHeaders).build();
     }
+
 
 }

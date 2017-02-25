@@ -1,5 +1,6 @@
 package com.careem.hackathon.master.resource;
 
+import com.careem.hackathon.master.core.Facility;
 import com.codahale.metrics.annotation.Timed;
 
 import javax.ws.rs.*;
@@ -21,6 +22,7 @@ public class MasterResource {
     @Timed
     public Response getFacilities(@PathParam("id") long id) throws Exception {
 //        return buildResponse(javax.ws.rs.core.Response.Status.OK, getMetricResponse,"Successfully fetched");
-        return null;
+        Facility facility = getFacilities(id);
+        return buildResponse(javax.ws.rs.core.Response.Status.OK, Facility,"Successfully fetched");
     }
 }
