@@ -28,7 +28,8 @@ public class UserResource {
     @Path("/addUser")
     @Timed
     public Response postEmpDailyAttendance(UserRequest userRequest) throws Exception {
-        return javax.ws.rs.core.Response.status(Response.Status.OK).entity(userClient.createUser(userRequest)).build();
+        userClient.createUser(userRequest);
+        return javax.ws.rs.core.Response.status(Response.Status.OK).entity("Success").build();
     }
 
 }

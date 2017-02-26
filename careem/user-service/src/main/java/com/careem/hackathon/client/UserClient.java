@@ -25,7 +25,7 @@ public class UserClient extends AbstractClient {
         return null;
     }
 
-    public String createUser(UserRequest consignmentRequest) throws Exception {
+    public void createUser(UserRequest consignmentRequest) throws Exception {
         HttpPost httpPost = new HttpPost(this.url+GET_DATA_URL);
         String payload = new ObjectMapper().writeValueAsString(consignmentRequest);
         StringEntity data = new StringEntity(payload);
@@ -42,6 +42,6 @@ public class UserClient extends AbstractClient {
         }
         is = response.getEntity().getContent();
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(is, String.class);
+        //return mapper.readValue(is, String.class);
     }
 }

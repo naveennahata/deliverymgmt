@@ -1,7 +1,9 @@
 package com.careem.hackathon.ui;
 
 import com.careem.hackathon.client.ConsignmentClient;
+import com.careem.hackathon.client.UserClient;
 import com.careem.hackathon.ui.resource.ConsignmentResource;
+import com.careem.hackathon.ui.resource.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
@@ -20,6 +22,7 @@ import java.util.List;
 public class UIApplication extends Application<UIConfiguration> {
     public void run(UIConfiguration uiConfiguration, Environment environment) throws Exception {
         environment.jersey().register(new ConsignmentResource(new ConsignmentClient(provideHttpClient())));
+        environment.jersey().register(new UserResource(new UserClient(provideHttpClient())));
     }
 
     HttpClient provideHttpClient() {
