@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "resources")
 public class Resource extends BaseEntity {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "resource_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -22,6 +22,6 @@ public class Resource extends BaseEntity {
     private String userId;
 
     @Basic
-    @Column(name = "type")
-    private String type;
+    @Column(name = "resource_type")
+    private String resourceType;
 }

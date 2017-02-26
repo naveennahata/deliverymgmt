@@ -17,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    public UserResponse createUser(UserRequest userRequest) {
-        return userService.createUser(userRequest);
+    public void createUser(UserRequest userRequest) {
+         userService.createUser(userRequest);
     }
 }

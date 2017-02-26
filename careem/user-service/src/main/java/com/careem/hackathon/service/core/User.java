@@ -13,9 +13,9 @@ import javax.persistence.*;
 @Table(name = "user_details")
 public class User extends BaseEntity {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userId;
 
     @Basic
     @Column(name = "first_name")
@@ -35,5 +35,5 @@ public class User extends BaseEntity {
 
     @Basic
     @Column(name = "contact_number")
-    private String contact_number;
+    private String contactNumber;
 }

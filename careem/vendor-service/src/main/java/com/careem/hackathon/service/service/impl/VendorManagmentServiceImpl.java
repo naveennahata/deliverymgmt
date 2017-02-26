@@ -1,8 +1,8 @@
 package com.careem.hackathon.service.service.impl;
 
-import com.careem.hackathon.repository.UserRepository;
-import com.careem.hackathon.service.core.User;
-import com.careem.hackathon.service.service.UserService;
+import com.careem.hackathon.api.ResourceRequest;
+import com.careem.hackathon.repository.VendorManagmentRepository;
+import com.careem.hackathon.service.service.VendorManagmentService;
 import com.google.inject.Inject;
 
 /**
@@ -12,12 +12,11 @@ public class VendorManagmentServiceImpl implements VendorManagmentService {
     private final VendorManagmentRepository vendorManagmentRepository;
 
     @Inject
-    public UserServiceImpl(UserRepository vendorManagmentRepository) {
+    public VendorManagmentServiceImpl(VendorManagmentRepository vendorManagmentRepository) {
         this.vendorManagmentRepository = vendorManagmentRepository;
     }
 
-    public User createUser(User user) {
-        userRepository.createUser(user);
-        return userRepository.getUser(user.getId());
+    public void createResource(ResourceRequest user) {
+        vendorManagmentRepository.createResource(user);
     }
 }

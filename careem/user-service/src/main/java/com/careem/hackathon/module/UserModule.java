@@ -43,12 +43,10 @@ public class UserModule extends AbstractModule {
 
     @Provides
     @Singleton
-    HttpClient provideHttpClient() {
+    org.apache.http.client.HttpClient provideHttpClient() {
         List<Header> defaultHeaders = new ArrayList<Header>();
         defaultHeaders.add(new BasicHeader("Accept", "*/*"));
         defaultHeaders.add(new BasicHeader("Content-Type", "application/json"));
         return HttpClientBuilder.create().setDefaultHeaders(defaultHeaders).build();
     }
-
-
 }

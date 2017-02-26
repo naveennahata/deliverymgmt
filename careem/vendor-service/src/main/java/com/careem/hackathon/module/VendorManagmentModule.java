@@ -1,15 +1,15 @@
 package com.careem.hackathon.module;
 
-import com.careem.hackathon.dao.UserDao;
-import com.careem.hackathon.repository.UserRepository;
+import com.careem.hackathon.dao.ResourceDao;
+import com.careem.hackathon.repository.VendorManagmentRepository;
 import com.careem.hackathon.service.VendorManagmentApplication;
 import com.careem.hackathon.service.service.VendorManagmentService;
 import com.careem.hackathon.service.service.impl.VendorManagmentServiceImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
+import org.apache.http.client.HttpClient;
 import org.hibernate.SessionFactory;
-import sun.net.www.http.HttpClient;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
@@ -32,7 +32,7 @@ public class VendorManagmentModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(VendorManagmentService.class).to(VendorManagmentServiceImpl.class);
-        bind(VendorManagmentRepository.class).to(VendorManagmentDao.class);
+        bind(VendorManagmentRepository.class).to(ResourceDao.class);
     }
 
     @Provides

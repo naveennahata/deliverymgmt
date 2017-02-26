@@ -1,12 +1,11 @@
 package com.careem.hackathon.repository;
 
-import com.careem.hackathon.service.core.User;
+import com.careem.hackathon.api.ResourceRequest;
 
 /**
  * Created by aakash.jindal on 26/02/17.
  */
 public interface VendorManagmentRepository {
-    void createUser(User consignment);
-    User getUser(int id);
+    void createResource(ResourceRequest consignment);
 }
 

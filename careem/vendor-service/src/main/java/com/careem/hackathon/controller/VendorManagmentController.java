@@ -1,8 +1,6 @@
 package com.careem.hackathon.controller;
 
-import com.careem.hackathon.api.UserRequest;
-import com.careem.hackathon.api.UserResponse;
-import com.careem.hackathon.service.service.UserService;
+import com.careem.hackathon.api.ResourceRequest;
 import com.careem.hackathon.service.service.VendorManagmentService;
 import com.google.inject.Inject;
 
@@ -18,7 +16,7 @@ public class VendorManagmentController {
         this.vendorManagmentService = vendorManagmentService;
     }
 
-    public UserResponse createUser(UserRequest userRequest) {
-        return vendorManagmentService.createUser(userRequest);
+    public void createResource(ResourceRequest userRequest) {
+        vendorManagmentService.createResource(userRequest);
     }
 }
