@@ -2,10 +2,10 @@ server:
   rootPath: /api/*
   applicationConnectors:
   - type: http
-    port: 29010
+    port: 29040
   adminConnectors:
   - type: http
-    port: 29011
+    port: 29041
 
 logging:
   # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
