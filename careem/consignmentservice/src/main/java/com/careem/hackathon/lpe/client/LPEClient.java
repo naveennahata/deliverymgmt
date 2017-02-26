@@ -14,8 +14,8 @@ import java.io.InputStream;
  * Created by naveen.nahata on 26/02/17.
  */
 public class LPEClient extends AbstractClient{
-    private String url = "http://localhost:27030";
-    private final String PLAN_URL = "/promise/plan";
+    private String url = "http://localhost:29030";
+    private final String PLAN_URL = "/api/promise/plan";
 
     public LPEClient(HttpClient client) {
         super(client);
