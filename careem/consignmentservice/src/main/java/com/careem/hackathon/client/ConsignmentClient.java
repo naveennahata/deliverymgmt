@@ -19,8 +19,8 @@ import java.io.UnsupportedEncodingException;
  * Created by rishabh.sood on 26/02/17.
  */
 public class ConsignmentClient extends AbstractClient {
-    private String url = "http://localhost:27030";
-    private final String GET_DATA_URL = "/consignment/addConsignment";
+    private String url = "http://localhost:29010";
+    private final String GET_DATA_URL = "/api/consignment/addConsignment";
 
     public ConsignmentClient(HttpClient client) {
         super(client);

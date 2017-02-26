@@ -17,7 +17,6 @@ import javax.ws.rs.core.Response;
  */
 @Path("/consignment")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class ConsignmentResource {
 
     private ConsignmentClient consignmentClient;

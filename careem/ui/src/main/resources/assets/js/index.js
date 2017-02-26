@@ -3,15 +3,16 @@
  */
 function getData() {
     var data = {};
-    data.userId = $('#user').text();
-    data.startLocation = $('#startpincode').text();
-    data.endLocation = $('#endpincode').text();
-    data.type = $('#type').find(":selected").text();
+    data.userId = $('#user').val();
+    data.startLocation = $('#startpincode').val();
+    data.endLocation = $('#endpincode').val();
+    data.type = $('#ctype').find(":selected").text();
     $.ajax({
         url: "/api/consignment/addConsignment",
         method: "POST",
         async: false,
-        data: data,
+        contentType: 'application/json',
+        data: JSON.stringify(data),
         success: function (data) {
             $('#table').append('<tr><td>Promised Date</td><td>'+data.promisedDate+'</td></tr><tr><td>Cost</td><td>'+data.cost+'</td></tr>');
         },

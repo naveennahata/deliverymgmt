@@ -37,4 +37,4 @@ masterDatabase:
     hibernate.dialect: org.hibernate.dialect.MySQLDialect
     hibernate.show_sql: true
     hibernate.jdbc.batch_size: 50
-    hibernate.hbm2ddl.auto: create
+    #hibernate.hbm2ddl.auto: create

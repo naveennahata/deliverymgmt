@@ -12,7 +12,6 @@ import java.util.Date;
  */
 @Data
 @NoArgsConstructor
-@JsonSnakeCase
 public class ConsignmentResponse {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "en_IN", timezone = "Asia/Calcutta")
     private Date promisedDate;

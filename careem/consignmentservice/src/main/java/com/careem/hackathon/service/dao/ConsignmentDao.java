@@ -2,6 +2,7 @@ package com.careem.hackathon.service.dao;
 
 import com.careem.hackathon.service.core.Consignment;
 import com.careem.hackathon.service.repository.ConsignmentRepository;
+import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
@@ -10,6 +11,7 @@ import org.hibernate.SessionFactory;
  */
 public class ConsignmentDao extends AbstractDAO<Consignment> implements ConsignmentRepository {
 
+    @Inject
     public ConsignmentDao(SessionFactory sessionFactory) {
         super(sessionFactory);
     }
