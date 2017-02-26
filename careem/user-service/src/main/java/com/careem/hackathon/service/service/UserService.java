@@ -8,5 +8,5 @@ import com.careem.hackathon.api.UserResponse;
  * Created by aakash.jindal on 26/02/17.
  */
 public interface UserService {
-    UserResponse createUser(UserRequest user);
+    void createUser(UserRequest user);
 }

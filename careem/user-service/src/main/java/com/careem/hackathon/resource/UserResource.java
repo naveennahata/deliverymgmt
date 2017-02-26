@@ -33,6 +33,7 @@ public class UserResource {
     @UnitOfWork(value = "master")
     @Timed
     public Response createUser(UserRequest userRequest) throws Exception {
-        return javax.ws.rs.core.Response.status(Response.Status.OK).entity(userController.createUser(userRequest)).build();
+        userController.createUser(userRequest);
+        return javax.ws.rs.core.Response.status(Response.Status.CREATED).entity("successfully_created").build();
     }
 }
