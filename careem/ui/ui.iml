@@ -20,6 +20,7 @@
     <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jackson2:1.18.0-rc" level="project" />
     <orderEntry type="library" name="Maven: com.google.http-client:google-http-client:1.18.0-rc" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.5" level="project" />
+    <orderEntry type="module" module-name="user-service" />
     <orderEntry type="library" name="Maven: io.dropwizard:dropwizard-core:0.9.1" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard:dropwizard-util:0.9.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" level="project" />

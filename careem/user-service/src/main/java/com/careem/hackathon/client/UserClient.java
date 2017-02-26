@@ -14,7 +14,7 @@ import java.io.InputStream;
  * Created by aakash.jindal on 26/02/17.
  */
 public class UserClient extends AbstractClient {
-    private String url = "http://localhost:29010";
+    private String url = "http://localhost:29040";
     private final String GET_DATA_URL = "/api/user/register";
 
     public UserClient(HttpClient client) {

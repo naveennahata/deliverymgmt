@@ -25,5 +25,24 @@ function getData() {
 }
 
 function register() {
-
+    var data = {};
+    data.first_name = $('#firstname').val();
+    data.last_name = $('#lastname').val();
+    data.email= $('#email').val();
+    data.contact_number = $('#contact').val();
+    data.type = $('#type').find(":selected").text();
+    $.ajax({
+        url: "/api/user/addUser",
+        method: "POST",
+        async: false,
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            alert("Success");
+        },
+        error: function (exception) {
+            modal.error("Error", exception.responseText);
+        },
+        complete: $.noop
+    });
 }
