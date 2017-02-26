@@ -6,8 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/careem.iml" filepath="$PROJECT_DIR$/careem.iml" />
       <module fileurl="file://$PROJECT_DIR$/consignmentservice/consignment-service.iml" filepath="$PROJECT_DIR$/consignmentservice/consignment-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/consignmentservice/consignmentservice.iml" filepath="$PROJECT_DIR$/consignmentservice/consignmentservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/master-service/master.iml" filepath="$PROJECT_DIR$/master-service/master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/master-service/master-service.iml" filepath="$PROJECT_DIR$/master-service/master-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/orchestrator/orchestrator.iml" filepath="$PROJECT_DIR$/orchestrator/orchestrator.iml" />
       <module fileurl="file://$PROJECT_DIR$/planner/planner.iml" filepath="$PROJECT_DIR$/planner/planner.iml" />
       <module fileurl="file://$PROJECT_DIR$/promise-engine/promise-engine.iml" filepath="$PROJECT_DIR$/promise-engine/promise-engine.iml" />

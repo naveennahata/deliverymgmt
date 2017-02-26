@@ -1,4 +1,4 @@
-package com.careem.hackathon.promise.engine.modal;
+package com.careem.hackathon.lpe.client;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

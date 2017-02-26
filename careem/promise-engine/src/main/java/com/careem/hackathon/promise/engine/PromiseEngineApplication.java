@@ -1,7 +1,11 @@
 package com.careem.hackathon.promise.engine;
 
 import com.careem.hackathon.promise.engine.db.PlanAccessor;
+import com.careem.hackathon.promise.engine.module.PromiseEngineModule;
+import com.careem.hackathon.promise.engine.resource.PromiseResource;
 import com.google.common.collect.ImmutableList;
+import com.google.inject.Stage;
+import com.hubspot.dropwizard.guice.GuiceBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -37,13 +41,22 @@ public class PromiseEngineApplication extends Application<PromiseEngineConfigura
         }
     };
 
+    private static final GuiceBundle<PromiseEngineConfiguration> guiceBundle =
+            GuiceBundle.<PromiseEngineConfiguration>newBuilder().setConfigClass(PromiseEngineConfiguration.class)
+                    .addModule(new PromiseEngineModule())
+                    .enableAutoConfig(PromiseEngineApplication.class.getPackage().getName())
+                    .build(Stage.DEVELOPMENT);
+
+
     @Override
     public void initialize(Bootstrap<PromiseEngineConfiguration> bootstrap) {
         bootstrap.addBundle(masterBundle);
+        bootstrap.addBundle(guiceBundle);
     }
 
     @Override
     public void run(PromiseEngineConfiguration promiseEngineConfiguration, Environment environment) throws Exception {
+//        environment.jersey().register(new PromiseResource());
 
     }
 }

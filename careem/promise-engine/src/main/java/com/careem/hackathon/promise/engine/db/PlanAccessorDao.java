@@ -3,6 +3,7 @@ package com.careem.hackathon.promise.engine.db;
 import com.careem.hackathon.promise.engine.modal.Plan;
 import com.careem.hackathon.promise.engine.modal.ShipmentPlanResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;
 import io.dropwizard.jackson.Jackson;
 import org.hibernate.SessionFactory;
@@ -16,6 +17,8 @@ import java.util.List;
 public class PlanAccessorDao extends AbstractDAO<PlanAccessor> implements PlanAccessorRepository {
 
     final protected ObjectMapper mapper;
+
+    @Inject
     public PlanAccessorDao(SessionFactory sessionFactory) {
         super(sessionFactory);
         this.mapper = Jackson.newObjectMapper();
