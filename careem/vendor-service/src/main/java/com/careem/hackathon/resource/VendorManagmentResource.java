@@ -1,7 +1,6 @@
 package com.careem.hackathon.resource;
 
-import com.careem.hackathon.api.UserRequest;
-import com.careem.hackathon.controller.UserController;
+import com.careem.hackathon.api.ResourceRequest;
 import com.careem.hackathon.controller.VendorManagmentController;
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
@@ -33,7 +32,8 @@ public class VendorManagmentResource {
     @Path("/register")
     @UnitOfWork(value = "master")
     @Timed
-    public Response createUser(UserRequest userRequest) throws Exception {
-        return Response.status(Response.Status.OK).entity(vendorManagmentController.createUser(userRequest)).build();
+    public Response createResource(ResourceRequest userRequest) throws Exception {
+        vendorManagmentController.createResource(userRequest);
+        return Response.status(Response.Status.CREATED).entity("created").build();
     }
 }

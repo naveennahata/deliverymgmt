@@ -1,8 +1,15 @@
 package com.careem.hackathon.service;
 
+import com.careem.hackathon.controller.VendorManagmentController;
+import com.careem.hackathon.dao.ResourceDao;
+import com.careem.hackathon.module.VendorManagmentModule;
+import com.careem.hackathon.resource.VendorManagmentResource;
 import com.careem.hackathon.service.core.IntercityResource;
 import com.careem.hackathon.service.core.Resource;
+import com.careem.hackathon.service.service.impl.VendorManagmentServiceImpl;
 import com.google.common.collect.ImmutableList;
+import com.google.inject.Stage;
+import com.hubspot.dropwizard.guice.GuiceBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -28,7 +35,7 @@ public class VendorManagmentApplication extends Application<VendorManagmentConfi
                 .build();
     }
 
-    private final HibernateBundle<VendorManagmentConfiguration> masterBundle = new HibernateBundle<VendorManagmentConfiguration>(
+    public static final HibernateBundle<VendorManagmentConfiguration> masterBundle = new HibernateBundle<VendorManagmentConfiguration>(
             entities, new SessionFactoryFactory()) {
         @Override
         protected String name() {
@@ -40,13 +47,20 @@ public class VendorManagmentApplication extends Application<VendorManagmentConfi
         }
     };
 
+    private static final GuiceBundle<VendorManagmentConfiguration> guiceBundle =
+            GuiceBundle.<VendorManagmentConfiguration>newBuilder().setConfigClass(VendorManagmentConfiguration.class)
+                    .addModule(new VendorManagmentModule())
+                    .enableAutoConfig(VendorManagmentApplication.class.getPackage().getName())
+                    .build(Stage.DEVELOPMENT);
+
     @Override
     public void initialize(Bootstrap<VendorManagmentConfiguration> bootstrap) {
         bootstrap.addBundle(masterBundle);
+        bootstrap.addBundle(guiceBundle);
     }
 
     @Override
     public void run(VendorManagmentConfiguration userConfiguration, Environment environment) throws Exception {
-
+        environment.jersey().register(new VendorManagmentResource(new VendorManagmentController(new VendorManagmentServiceImpl(new ResourceDao(masterBundle.getSessionFactory())))));
     }
 }
